@@ -6,48 +6,33 @@ use crate::mac::binary::*;
 use std::fmt::{self, Write};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Status {
-    Complete,
-    Incomplete,
-}
-
-impl fmt::Display for Status {
-
-}
-
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mode {
     Full,
     Summary,
 }
 
 impl fmt::Display for Mode {
-
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self {
+            Self::Full => "Full Report",
+            Self::Summary => "Summarized Report",
+        })
+    }
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Review {
     Normal,
     Review,
+    Inconclusive,
 }
 
 impl fmt::Display for Review {
-
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self {
+            Self::Normal => " No Further Review ",
+            Self::Review => " Further Review Needed ",
+            Self::Inconclusive => " Inconclusive ",
+        })
+    }
 }
-
-#[derive(Clone, Debug, PartialEq, Eq)]
-pub struct FileHashes {
-    pub md5: Option<String>,
-    pub sha1: Option<String>,
-    pub sha256: Option<String>,
-    pub sha512: Option<String>,
-}
-
-#[derive(Clone, Debug, PartialEq, Eq)]
-pub struct FileMetadata {
-    pub name: String,
-    pub path: Option<String>,
-    pub size: u64,
-    pub hashes: FileHashes,
-}
-
