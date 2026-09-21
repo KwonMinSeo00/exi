@@ -24,7 +24,6 @@ impl fmt::Display for Mode {
 pub enum Review {
     Normal,
     Review,
-    Inconclusive,
 }
 
 impl fmt::Display for Review {
@@ -32,7 +31,7 @@ impl fmt::Display for Review {
         f.write_str(match self {
             Self::Normal => " No Further Review ",
             Self::Review => " Further Review Needed ",
-            Self::Inconclusive => " Inconclusive ",
         })
     }
 }
+
