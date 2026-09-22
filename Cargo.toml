@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 clap = "4.6.6"
+models = { git = "https://github.com/KwonMinSeo00/models.git", rev = "6085f240e1b0b993d4d82c3e7a1fbf603a117992" }
 sha2 = "0.11.0"

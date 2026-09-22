@@ -140,6 +140,7 @@ name = "exi"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "models",
  "sha2",
 ]
 
@@ -163,6 +164,11 @@ name = "libc"
 version = "0.2.189"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
+
+[[package]]
+name = "models"
+version = "0.1.0"
+source = "git+https://github.com/KwonMinSeo00/models.git?rev=6085f240e1b0b993d4d82c3e7a1fbf603a117992#6085f240e1b0b993d4d82c3e7a1fbf603a117992"
 
 [[package]]
 name = "once_cell_polyfill"

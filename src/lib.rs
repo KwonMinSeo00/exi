@@ -5,6 +5,9 @@ pub mod interface;
 pub mod parse;
 pub mod report;
 
+// Models
+pub use models;
+
 // Shared
 pub mod shared;
 
